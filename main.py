@@ -19,7 +19,7 @@ matplotlib.use("Agg")  # Prevent matplotlib from holding display resources
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
 
-APP_VERSION = "1.1.1"
+APP_VERSION = "1.1.2"
 
 def get_font(size=10, bold=False):
     """Cross-platform font selector."""
@@ -49,8 +49,18 @@ class AnalysisWindow(tk.Toplevel):
         # Proper close handler
         self.protocol("WM_DELETE_WINDOW", self._on_close)
 
-        # Maximise & focus
-        self.after(50, lambda: self.state("zoomed"))
+        # Maximise & focus (Platform-aware)
+        def try_zoom():
+            try:
+                if sys.platform == "win32":
+                    self.state("zoomed")
+                else:
+                    self.attributes("-zoomed", True)
+            except Exception:
+                # Fallback for systems that don't support either
+                self.geometry("1000x800")
+        
+        self.after(50, try_zoom)
         self.after(150, self.focus_force)
 
         # ── Header bar ──
